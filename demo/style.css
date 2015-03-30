@@ -23,5 +23,21 @@ header{
   color: #fff;
   font-weight: 200;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 40px;
+}
+
+.fixed{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px 20px;
+  font-size: 35px;
+}
+
+.fixed a{
+  color: #cccccc;
+}
+
+.fixed a:hover{
+  color: #ffffff;
 }
