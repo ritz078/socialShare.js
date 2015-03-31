@@ -7,7 +7,19 @@
  */
 (function ($) {
   $.fn.socialJS = function (options) {
-    console.log(options);
+
+    function toWord(num) {
+      if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1) + 'G';
+      }
+      if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+      }
+      if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+      }
+      return num;
+    }
 
     var defaultOptions = {
       url        : window.location.href,
@@ -20,11 +32,16 @@
       gPlus      : true
     };
 
-    var that=this;
+    var that = this;
 
     options = jQuery.extend({}, defaultOptions, options);
 
     return this.each(function () {
+
+      function toShareNumber(num) {
+
+      }
+
       var process = {
 
         all: {
@@ -174,40 +191,39 @@
               render(counts);
             });
         }
-        else{
+        else {
           render(counts);
         }
 
       });
 
-      function render(c){
-        if(options.facebook){
-          that.find('.facebook-count').each(function(){
-            $(this).html(c.facebook);
+      function render(c) {
+        if (options.facebook) {
+          that.find('.facebook-count').each(function () {
+            $(this).html(toWord(c.facebook));
           });
         }
-        if(options.twitter){
-          that.find('.twitter-count').each(function(){
-            $(this).html(c.twitter);
+        if (options.twitter) {
+          that.find('.twitter-count').each(function () {
+            $(this).html(toWord(c.twitter));
           });
         }
-        if(options.pinterest){
-          that.find('.pinterest-count').each(function(){
-            $(this).html(c.pinterest);
+        if (options.pinterest) {
+          that.find('.pinterest-count').each(function () {
+            $(this).html(toWord(c.pinterest));
           });
         }
-        if(options.linkedIn){
-          that.find('.linkedin-count').each(function(){
-            $(this).html(c.linkedIn);
+        if (options.linkedIn) {
+          that.find('.linkedin-count').each(function () {
+            $(this).html(toWord(c.linkedIn));
           });
         }
-        if(options.gPlus){
-          that.find('.google-plus-count').each(function(){
-            $(this).html(c.gPlus);
+        if (options.gPlus) {
+          that.find('.google-plus-count').each(function () {
+            $(this).html(toWord(c.gPlus));
           });
         }
       }
-
 
     });
   };
