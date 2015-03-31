@@ -1,5 +1,5 @@
 {
-  "name": "social-js",
+  "name": "social",
   "version": "1.0.0",
   "description": "social.js",
   "main":["./src/jquery.social.js"],

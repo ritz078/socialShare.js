@@ -16,7 +16,7 @@
       twitter    : true,
       facebook   : true,
       pinterest  : true,
-      linkedin   : true
+      linkedIn   : true
     };
 
     options = jQuery.extend({}, defaultOptions, options);
@@ -100,7 +100,7 @@
           }
         },
 
-        linkedin: {
+        linkedIn: {
 
           /**
            * Get The count of linkedin shares.
@@ -120,7 +120,7 @@
           }
         },
 
-        googleplus: {
+        gPlus: {
 
           /**
            * Get The count of G+ shares.
