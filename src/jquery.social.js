@@ -24,7 +24,7 @@
 
     options = jQuery.extend({}, defaultOptions, options);
 
-    return this.each(function (i) {
+    return this.each(function () {
       var process = {
 
         all: {
@@ -184,27 +184,27 @@
         if(options.facebook){
           that.find('.facebook-count').each(function(){
             $(this).html(c.facebook);
-          })
+          });
         }
         if(options.twitter){
           that.find('.twitter-count').each(function(){
             $(this).html(c.twitter);
-          })
+          });
         }
         if(options.pinterest){
           that.find('.pinterest-count').each(function(){
             $(this).html(c.pinterest);
-          })
+          });
         }
         if(options.linkedIn){
           that.find('.linkedin-count').each(function(){
             $(this).html(c.linkedIn);
-          })
+          });
         }
         if(options.gPlus){
           that.find('.google-plus-count').each(function(){
             $(this).html(c.gPlus);
-          })
+          });
         }
       }
 
