@@ -1,6 +1,16 @@
 # social.js
 
 > A jquery plugin to provide more control on social sharing buttons.
+> Do the styling without worrying about the javascript implementation.
+
+![screen](demo/screen.png)
+
+Features
+
+* Full control over the design of the buttons.
+* No separate widget js loading for separate services.
+* Share counts of all supported services.
+* Easy to configure.
 
 
 ## Getting Started
@@ -15,11 +25,6 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="dist/jquery.socialshare.min.js"></script>
-<script>
-  jQuery(function ($) {
-    $(element).socialShare();
-  });
-</script>
 ```
 
 
