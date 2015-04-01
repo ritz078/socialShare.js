@@ -3,7 +3,7 @@
 > A jquery plugin to provide more control on social sharing buttons.
 > Do the styling without worrying about the javascript implementation.
 
-Demo is available at [http://rkritesh.in/socialShare](http://rkritesh.in/socialShare)
+Demo is available at [http://rkritesh.in/socialShare.js](http://rkritesh.in/socialShare.js)
 
 
 ![screen](demo/screen.png)
@@ -70,20 +70,23 @@ twitterVia|null|string containing the via value for twitter sharing eg: 'ritz078
 twitterHashTags|null|comma separated values to be shared as hashtags in a single string.Mandatory if twitter is set to true.
 
 ##How to use ?
-After the plugin is called on an element you get access to the following classes. Just add them wherever you want to use them
-**[service]-share** and **[service]-count**
+AYou can use these 2 classes to make a class clickable(open share dialogue) and show the share counts.
+* **[service]-share** and 
+* **[service]-count**
+
 where **[service] = twitter/facebook/pinterest/linkedin/gPlus**
+
+Just add them wherever you want to use them
 
 Class|Description|example
 ------|----------|-------
 **[service]-share**|This is the class that becomes a link after clicking on which the sharing dialogue appears| ```<div class="twitter-share"></div>```
 **[service]-count**|Class in which the share count appears|```<span class="twitter-count"></span>```
 
-These classes can be used anywhere inside the #element with any structure (Its only the class that matters and not the structure providing you full control of the design).
 
 ##Example Usage
 
-* **HTML can be of any structure and tags**
+* **HTML can comprise of any structure and tags**
 * **Just use the 2 types of class provided**
 
 ```html
@@ -116,7 +119,7 @@ because of the class 'facebook-share'====-->
 
 ```
 
-Demo is available at [http://rkritesh.in/socialShare](http://rkritesh.in/socialShare)
+Demo is available at [http://rkritesh.in/socialShare.js](http://rkritesh.in/socialShare.js)
 
 ## License
 
