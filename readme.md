@@ -72,9 +72,9 @@ After the plugin is called on an element you get access to the following classes
 where service = twitter/facebook/pinterest/linkedin/gPlus
 
 Class|Description|example
--|-
-**[service]-share|This is the class that becomes a link after clicking on which the sharing dialogue appears|Eg: <div class="twitter-share"></div>
-**[service]-count|Class in which the share count appears|Eg <span class="twitter-count"></span>
+------|----------|-------
+**[service]-share**|This is the class that becomes a link after clicking on which the sharing dialogue appears|Eg: <div class="twitter-share"></div>
+**[service]-count**|Class in which the share count appears|Eg <span class="twitter-count"></span>
 
 These classes can be used anywhere inside the #element with any structure (Its only the class that matters and not the structure providing you full control of the design).
 
