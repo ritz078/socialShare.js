@@ -93,7 +93,7 @@ Class|Description|example
 <div class="element">
 <!--===== this block will become clickable (shows the twitter share dialogue on click) 
 because of the class 'twitter-share'====-->
-	<div class="anything twitter-share">
+	<div class="twitter-share">
 		<span>Share on twitter</span>
 		<span class="twitter-count"></span> <!--====shows twitter share count==-->
 	</div>
@@ -101,7 +101,7 @@ because of the class 'twitter-share'====-->
 
 	<!--===== this block will become clickable (shows the facebook share dialogue on click) 
 because of the class 'facebook-share'====-->
-	<div class="anything facebook-share">
+	<div class="facebook-share">
 		<span>Share on Facebook</span>
 		<span class="facebook-count"></span><!--=== shows facebook share count==-->
 	</div>
