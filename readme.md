@@ -70,7 +70,7 @@ twitterVia|null|string containing the via value for twitter sharing eg: 'ritz078
 twitterHashTags|null|comma separated values to be shared as hashtags in a single string.Mandatory if twitter is set to true.
 
 ##How to use ?
-AYou can use these 2 classes to make a class clickable(open share dialogue) and show the share counts.
+You can use these 2 classes to make a class clickable(open share dialogue) and show the share counts.
 * **[service]-share** and 
 * **[service]-count**
 
