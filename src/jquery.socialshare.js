@@ -10,7 +10,6 @@
 
     var defaultOptions = {
       url            : window.location.href,
-      class          : 'social-js',
       description    : $('meta[name=description]').attr("content"),
       title          : $('title').text(),
       twitter        : true,
@@ -20,15 +19,13 @@
       gPlus          : true,
       image          : null,
       toWord         : true,
-      twitterVia     : 'ritz078',
-      twitterHashTags: 'javascript,abc'
+      twitterVia     : null,
+      twitterHashTags: null
     };
 
     var that = this;
 
     options = jQuery.extend({}, defaultOptions, options);
-
-    this.addClass(options.class);
 
     function toWord(num) {
       if (options.toWord) {
@@ -187,17 +184,12 @@
 
         if (!d.success) {
           $.when(
-            (options.facebook ? process.facebook.getCount(options, counts) : null),
-            (options.twitter ? process.twitter.getCount(options, counts) : null),
-            (options.pinterest ? process.pinterest.getCount(options, counts) : null),
-            (options.linkedIn ? process.linkedIn.getCount(options, counts) : null),
-            (options.gPlus ? process.gPlus.getCount(options, counts) : null)
+            (options.facebook ? process.facebook.getCount(options, counts) : null), (options.twitter ? process.twitter.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
           )
             .then(function () {
               render(counts);
             });
-        }
-        else {
+        } else {
           render(counts);
         }
 
