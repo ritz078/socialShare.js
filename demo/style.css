@@ -28,10 +28,11 @@ header{
 
 .fixed{
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 100px;
+  right: 50%;
+  margin-right: -35px;
   padding: 10px 20px;
-  font-size: 35px;
+  font-size: 45px;
 }
 
 .fixed a{
@@ -42,6 +43,95 @@ header{
   color: #ffffff;
 }
 
-.social-js{
-  color:#fff;
+.element{
+  color: #fff;
+  /* display: table; */
+  /* margin: 100px auto; */
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -80px;
+}
+
+.element .group{
+  display: inline-block;
+  position: relative;
+  cursor:pointer;
+  margin: 0 5px;
+}
+
+.element button{
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 2px;
+  cursor: inherit;
+  border:0;
+  color:#ffffff;
+  width: 150px;
+  outline: 0;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fb{
+  background-color: #306199;
+}
+
+.fb:hover{
+  background-color: #244872;
+}
+
+
+
+.count{
+  background-color: #fff;
+  color: #565656;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  height: 40px;
+}
+
+.fa-caret-down{
+  position: absolute;
+  margin-top: -22px;
+  text-align: center;
+  right: 10px;
+  font-size: 28px;
+}
+
+.gp{
+  background-color: #e93f2e;
+}
+
+.gp:hover{
+  background-color: #ce2616;
+}
+
+.linkedin{
+  background-color: #007bb6;
+}
+
+.linkedin:hover{
+  background-color: #005983;
+}
+
+.twitter{
+  background-color: #26c4f1;
+}
+
+.twitter:hover{
+  background-color: #0eaad6;
+}
+
+.pinterest{
+  background-color: #b81621;
+}
+
+.pinterest:hover{
+  background-color: #8a1119;
 }

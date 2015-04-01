@@ -23,6 +23,7 @@
 
     var defaultOptions = {
       url            : window.location.href,
+      class          : 'social-js',
       description    : $('meta[name=description]').attr("content"),
       title          : $('title').text(),
       twitter        : true,
@@ -39,11 +40,9 @@
 
     options = jQuery.extend({}, defaultOptions, options);
 
+    this.addClass(options.class);
+
     return this.each(function () {
-
-      function toShareNumber(num) {
-
-      }
 
       var process = {
 
@@ -208,10 +207,10 @@
         top   : ($(window).height() / 3) - 168
       };
 
-      function openDialog(url,service){
+      function openDialog(url, service) {
         window.open(
           url,
-          service+'-share-dialogue',
+          service + '-share-dialogue',
           'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + winPosition.width + ',height=' + winPosition.height + ',top=' + winPosition.top + ',left=' + winPosition.left + ''
         );
         return false;
@@ -226,7 +225,7 @@
           that.find('.facebook-share').each(function () {
             var url = 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(options.url);
             $(this).click(function () {
-             openDialog(url,'facebook');
+              openDialog(url, 'facebook');
             })
           })
 
@@ -238,7 +237,7 @@
           that.find('.twitter-share').each(function () {
             var url = 'https://twitter.com/share?url=' + options.url + '&text=' + options.description + '&via=' + options.twitterVia + '&hashtags=' + options.twitterHashTags + '';
             $(this).click(function () {
-              openDialog(url,'twitter');
+              openDialog(url, 'twitter');
             })
           })
         }
@@ -249,7 +248,7 @@
           that.find('.pinterest-share').each(function () {
             var url = 'https://pinterest.com/pin/create/bookmarklet/?media=' + options.image + '&url=' + options.url + '&description=' + options.description;
             $(this).click(function () {
-             openDialog(url,'pinterest');
+              openDialog(url, 'pinterest');
             })
           })
         }
@@ -257,10 +256,10 @@
           that.find('.linkedin-count').each(function () {
             $(this).html(toWord(c.linkedIn));
           });
-          that.find('.linkedin-share').each(function(){
-            var url='http://www.linkedin.com/shareArticle?url='+options.url;
-            $(this).click(function(){
-              openDialog(url,'linkedin');
+          that.find('.linkedin-share').each(function () {
+            var url = 'http://www.linkedin.com/shareArticle?url=' + options.url;
+            $(this).click(function () {
+              openDialog(url, 'linkedin');
             })
           })
         }
@@ -268,10 +267,10 @@
           that.find('.gplus-count').each(function () {
             $(this).html(toWord(c.gPlus));
           });
-          that.find('.gplus-share').each(function(){
-            var url='https://plus.google.com/share?url='+options.url;
-            $(this).click(function(){
-              openDialog(url,'gplus');
+          that.find('.gplus-share').each(function () {
+            var url = 'https://plus.google.com/share?url=' + options.url;
+            $(this).click(function () {
+              openDialog(url, 'gplus');
             })
           })
         }

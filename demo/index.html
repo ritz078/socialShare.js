@@ -9,20 +9,32 @@
 </head>
 <body>
 <header>social.js</header>
-<div class="social-js">
-  <div>
-    <div class="facebook-count"></div>
+<div class="element">
+  <div class="group facebook-share">
+    <div class="count facebook-count"></div>
+    <i class="fa fa-caret-down"></i>
+    <button class="fb"><i class="fa fa-facebook"></i> facebook</button>
   </div>
-  <div class="facebook-share">jhgjhgjg</div>
-  <div class="facebook-count"></div>
-  <div class="gplus-count"></div>
-  <div class="gplus-share">gplus</div>
-  <div class="linkedin-count"></div>
-  <div class="linkedin-share">linkedin</div>
-  <div class="pinterest-count"></div>
-  <div class="pinterest-share">pinterest</div>
-  <div class="twitter-count"></div>
-  <div class="twitter-share">twitter</div>
+  <div class="group gplus-share">
+    <div class="count gplus-count"></div>
+    <i class="fa fa-caret-down"></i>
+    <button class="gp"><i class="fa fa-google-plus"></i> google-plus</button>
+  </div>
+  <div class="group linkedin-share">
+    <div class="count linkedin-count"></div>
+    <i class="fa fa-caret-down"></i>
+    <button class="linkedin"><i class="fa fa-facebook"></i> linkedin</button>
+  </div>
+  <div class="group twitter-share">
+    <div class="count twitter-count"></div>
+    <i class="fa fa-caret-down"></i>
+    <button class="twitter"><i class="fa fa-twitter"></i> twitter</button>
+  </div>
+  <div class="group pinterest-share">
+    <div class="count pinterest-count"></div>
+    <i class="fa fa-caret-down"></i>
+    <button class="pinterest"><i class="fa fa-pinterest"></i> pinterest</button>
+  </div>
 </div>
 
 
@@ -35,7 +47,7 @@
 <script src="../bower_components/jquery/jquery.js"></script>
 <script src="../src/jquery.social.js"></script>
 <script>
-  $('.social-js').socialJS({
+  $('.element').socialJS({
     twitter:true,
     image:'https://download.unsplash.com/photo-1426200830301-372615e4ac54',
     url:'http://twitter.com'
