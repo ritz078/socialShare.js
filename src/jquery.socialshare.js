@@ -6,20 +6,7 @@
  * Licensed under the MIT license.
  */
 (function ($) {
-  $.fn.socialJS = function (options) {
-
-    function toWord(num) {
-      if (num >= 1000000000) {
-        return (num / 1000000000).toFixed(1) + 'G';
-      }
-      if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-      }
-      if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-      }
-      return num;
-    }
+  $.fn.socialShare = function (options) {
 
     var defaultOptions = {
       url            : window.location.href,
@@ -32,6 +19,7 @@
       linkedIn       : true,
       gPlus          : true,
       image          : null,
+      toWord         : true,
       twitterVia     : 'ritz078',
       twitterHashTags: 'javascript,abc'
     };
@@ -41,6 +29,21 @@
     options = jQuery.extend({}, defaultOptions, options);
 
     this.addClass(options.class);
+
+    function toWord(num) {
+      if (options.toWord) {
+        if (num >= 1000000000) {
+          return (num / 1000000000).toFixed(1) + 'G';
+        }
+        if (num >= 1000000) {
+          return (num / 1000000).toFixed(1) + 'M';
+        }
+        if (num >= 1000) {
+          return (num / 1000).toFixed(1) + 'K';
+        }
+      }
+      return num;
+    }
 
     return this.each(function () {
 
@@ -226,8 +229,8 @@
             var url = 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(options.url);
             $(this).click(function () {
               openDialog(url, 'facebook');
-            })
-          })
+            });
+          });
 
         }
         if (options.twitter) {
@@ -238,8 +241,8 @@
             var url = 'https://twitter.com/share?url=' + options.url + '&text=' + options.description + '&via=' + options.twitterVia + '&hashtags=' + options.twitterHashTags + '';
             $(this).click(function () {
               openDialog(url, 'twitter');
-            })
-          })
+            });
+          });
         }
         if (options.pinterest) {
           that.find('.pinterest-count').each(function () {
@@ -249,8 +252,8 @@
             var url = 'https://pinterest.com/pin/create/bookmarklet/?media=' + options.image + '&url=' + options.url + '&description=' + options.description;
             $(this).click(function () {
               openDialog(url, 'pinterest');
-            })
-          })
+            });
+          });
         }
         if (options.linkedIn) {
           that.find('.linkedin-count').each(function () {
@@ -260,8 +263,8 @@
             var url = 'http://www.linkedin.com/shareArticle?url=' + options.url;
             $(this).click(function () {
               openDialog(url, 'linkedin');
-            })
-          })
+            });
+          });
         }
         if (options.gPlus) {
           that.find('.gplus-count').each(function () {
@@ -271,8 +274,8 @@
             var url = 'https://plus.google.com/share?url=' + options.url;
             $(this).click(function () {
               openDialog(url, 'gplus');
-            })
-          })
+            });
+          });
         }
       }
 

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
+        dest: 'dist/jquery.socialshare.js'
       }
     },
     uglify: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/jquery.socialshare.min.js'
       }
     },
     qunit: {

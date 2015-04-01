@@ -1,5 +1,5 @@
 {
-  "name": "social",
+  "name": "social-share",
   "version": "1.0.0",
   "description": "social.js",
   "main":["./src/jquery.social.js"],

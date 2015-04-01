@@ -7,17 +7,17 @@
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.githubusercontent.com/ritz078/jquery-social-js/master/dist/jquery.social.min.js
-[max]: https://raw.githubusercontent.com/ritz078/jquery-social-js/master/dist/jquery.social.js
+[min]: https://raw.githubusercontent.com/ritz078/jquery-social-js/master/dist/jquery.socialshare.min.js
+[max]: https://raw.githubusercontent.com/ritz078/jquery-social-js/master/dist/jquery.socialshare.js
 
 In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/jquery.social.min.js"></script>
+<script src="dist/jquery.socialshare.min.js"></script>
 <script>
   jQuery(function ($) {
-    $(element).socialJS();
+    $(element).socialShare();
   });
 </script>
 ```
