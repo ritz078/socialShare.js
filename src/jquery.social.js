@@ -22,14 +22,17 @@
     }
 
     var defaultOptions = {
-      url        : window.location.href,
-      description: $('meta[name=description]').attr("content"),
-      title      : $('title').text(),
-      twitter    : true,
-      facebook   : true,
-      pinterest  : true,
-      linkedIn   : true,
-      gPlus      : true
+      url            : window.location.href,
+      description    : $('meta[name=description]').attr("content"),
+      title          : $('title').text(),
+      twitter        : true,
+      facebook       : true,
+      pinterest      : true,
+      linkedIn       : true,
+      gPlus          : true,
+      image          : null,
+      twitterVia     : 'ritz078',
+      twitterHashTags: 'javascript,abc'
     };
 
     var that = this;
@@ -53,6 +56,7 @@
             var counts = {};
             jQuery.getJSON('https://count.donreach.com/?url=' + encodeURIComponent(opts.url) + '&callback=?',
               function (data) {
+                console.log(data);
                 counts.url = data.url;
                 counts.facebook = data.shares.facebook;
                 counts.twitter = data.shares.twitter;
@@ -197,31 +201,79 @@
 
       });
 
+      var winPosition = {
+        width : 626,
+        height: 336,
+        left  : ($(window).width() / 2) - 313,
+        top   : ($(window).height() / 3) - 168
+      };
+
+      function openDialog(url,service){
+        window.open(
+          url,
+          service+'-share-dialogue',
+          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + winPosition.width + ',height=' + winPosition.height + ',top=' + winPosition.top + ',left=' + winPosition.left + ''
+        );
+        return false;
+      }
+
       function render(c) {
         if (options.facebook) {
           that.find('.facebook-count').each(function () {
             $(this).html(toWord(c.facebook));
           });
+
+          that.find('.facebook-share').each(function () {
+            var url = 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(options.url);
+            $(this).click(function () {
+             openDialog(url,'facebook');
+            })
+          })
+
         }
         if (options.twitter) {
           that.find('.twitter-count').each(function () {
             $(this).html(toWord(c.twitter));
           });
+          that.find('.twitter-share').each(function () {
+            var url = 'https://twitter.com/share?url=' + options.url + '&text=' + options.description + '&via=' + options.twitterVia + '&hashtags=' + options.twitterHashTags + '';
+            $(this).click(function () {
+              openDialog(url,'twitter');
+            })
+          })
         }
         if (options.pinterest) {
           that.find('.pinterest-count').each(function () {
             $(this).html(toWord(c.pinterest));
           });
+          that.find('.pinterest-share').each(function () {
+            var url = 'https://pinterest.com/pin/create/bookmarklet/?media=' + options.image + '&url=' + options.url + '&description=' + options.description;
+            $(this).click(function () {
+             openDialog(url,'pinterest');
+            })
+          })
         }
         if (options.linkedIn) {
           that.find('.linkedin-count').each(function () {
             $(this).html(toWord(c.linkedIn));
           });
+          that.find('.linkedin-share').each(function(){
+            var url='http://www.linkedin.com/shareArticle?url='+options.url;
+            $(this).click(function(){
+              openDialog(url,'linkedin');
+            })
+          })
         }
         if (options.gPlus) {
-          that.find('.google-plus-count').each(function () {
+          that.find('.gplus-count').each(function () {
             $(this).html(toWord(c.gPlus));
           });
+          that.find('.gplus-share').each(function(){
+            var url='https://plus.google.com/share?url='+options.url;
+            $(this).click(function(){
+              openDialog(url,'gplus');
+            })
+          })
         }
       }
 
