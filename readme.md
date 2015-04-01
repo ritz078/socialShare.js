@@ -34,7 +34,7 @@ Install from **bower**
 bower install --save social-share
 ```
 
-Custom injection in your web page:
+Manual injection in your web page:
 
 ```html
 <script src="jquery.js"></script>
