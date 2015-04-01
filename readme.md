@@ -3,6 +3,9 @@
 > A jquery plugin to provide more control on social sharing buttons.
 > Do the styling without worrying about the javascript implementation.
 
+Demo is available at [http://rkritesh.in/socialShare](http://rkritesh.in/socialShare)
+
+
 ![screen](demo/screen.png)
 
 Features
@@ -73,12 +76,16 @@ where **[service] = twitter/facebook/pinterest/linkedin/gPlus**
 
 Class|Description|example
 ------|----------|-------
-**[service]-share**|This is the class that becomes a link after clicking on which the sharing dialogue appears|Eg: ```<div class="twitter-share"></div>```
-**[service]-count**|Class in which the share count appears|Eg ```<span class="twitter-count"></span>```
+**[service]-share**|This is the class that becomes a link after clicking on which the sharing dialogue appears| ```<div class="twitter-share"></div>```
+**[service]-count**|Class in which the share count appears|```<span class="twitter-count"></span>```
 
 These classes can be used anywhere inside the #element with any structure (Its only the class that matters and not the structure providing you full control of the design).
 
 ##Example Usage
+
+* **HTML can be of any structure and tags**
+* **Just use the 2 types of class provided**
+
 ```html
 <div class="element">
 <!--===== this block will become clickable (shows the twitter share dialogue on click) 
@@ -108,6 +115,8 @@ because of the class 'facebook-share'====-->
 
 
 ```
+
+Demo is available at [http://rkritesh.in/socialShare](http://rkritesh.in/socialShare)
 
 ## License
 
