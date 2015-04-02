@@ -26,12 +26,12 @@ Download the [production version][min] or the [development version][max].
 
 Install from **npm**
 ```
-npm install --save social-share
+npm install --save social-share-js
 ```
 
 Install from **bower**
 ```
-bower install --save social-share
+bower install --save social-share-js
 ```
 
 Manual injection in your web page:

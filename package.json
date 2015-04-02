@@ -1,17 +1,22 @@
 {
-  "name": "social-share",
-  "version": "1.0.0",
+  "name": "social-share-js",
+  "version": "1.0.1",
   "description": "A jquery plugin to provide more control on social sharing buttons.",
-  "main":["./src/jquery.social.js"],
+  "main":["./src/jquery.socialshare.js"],
   "keywords": [
-    "jquery-plugin"
+    "jquery-plugin",
+    "socialShare",
+    "share",
+    "twitter",
+    "facebook",
+    "linkedin"
   ],
   "author": {
     "name": "Ritesh Kumar",
     "email": "rkritesh078@gmail.com",
     "url": "https://github.com/ritz078"
   },
-  "repository": "ritz078/social-js",
+  "repository": "ritz078/socialShare.js",
   "license": "MIT",
   "scripts": {
     "test": "grunt"
