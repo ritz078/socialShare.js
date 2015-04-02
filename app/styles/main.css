@@ -30,13 +30,28 @@ header{
   position: fixed;
   bottom: 100px;
   right: 50%;
-  margin-right: -35px;
+  margin-right: -92px;
   padding: 10px 20px;
+  text-align: center;
+}
+
+.fixed i{
   font-size: 45px;
 }
 
-.fixed a{
+.fixed{
+  color: #ffffff;
+}
+
+.fixed i{
   color: #cccccc;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.fixed a{
+  text-decoration: none;
+  color:deepskyblue;
 }
 
 .fixed a:hover{
