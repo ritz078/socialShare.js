@@ -28,7 +28,7 @@ header{
 
 .fixed{
   position: fixed;
-  bottom: 100px;
+  bottom: 50px;
   right: 50%;
   margin-right: -92px;
   padding: 10px 20px;
@@ -45,7 +45,7 @@ header{
 
 .fixed i{
   color: #cccccc;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: block;
 }
 
