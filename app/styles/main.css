@@ -85,6 +85,7 @@ header{
   color:#ffffff;
   width: 150px;
   outline: 0;
+  font-family: inherit;
   -webkit-transition: background-color 0.2s ease-in-out;
   -moz-transition: background-color 0.2s ease-in-out;
   -o-transition: background-color 0.2s ease-in-out;
