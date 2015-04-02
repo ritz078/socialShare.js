@@ -1,7 +1,7 @@
 {
   "name": "social-share",
   "version": "1.0.0",
-  "description": "social.js",
+  "description": "A jquery plugin to provide more control on social sharing buttons.",
   "main":["./src/jquery.social.js"],
   "keywords": [
     "jquery-plugin"
