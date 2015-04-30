@@ -6,7 +6,7 @@
 Demo is available at [http://rkritesh.in/socialShare.js](http://rkritesh.in/socialShare.js)
 
 
-![screen](demo/screen.png)
+![screen](demo/demo.gif)
 
 Features
 --------
