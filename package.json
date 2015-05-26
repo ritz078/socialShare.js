@@ -2,7 +2,9 @@
   "name": "social-share-js",
   "version": "1.0.1",
   "description": "A jquery plugin to provide more control on social sharing buttons.",
-  "main":["./src/jquery.socialshare.js"],
+  "main": [
+    "./src/jquery.socialshare.js"
+  ],
   "keywords": [
     "jquery-plugin",
     "socialShare",
@@ -21,8 +23,9 @@
   "scripts": {
     "test": "grunt"
   },
-  "dependencies":{
-    "jquery":">=1.8.x"
+  "dependencies": {
+    "grunt-contrib-copy": "^0.8.0",
+    "jquery": ">=1.8.x"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

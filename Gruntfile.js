@@ -18,23 +18,19 @@ module.exports = function (grunt) {
     clean: {
       files: ['dist']
     },
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/jquery.socialshare.js'
-      }
-    },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
+        src: 'dist/jquery.socialshare.js',
         dest: 'dist/jquery.socialshare.min.js'
+      }
+    },
+    copy:{
+      main: {
+        src: 'src/jquery.socialshare.js',
+        dest: 'dist/jquery.socialshare.js'
       }
     },
     qunit: {
@@ -89,9 +85,8 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'jshint',
     'connect',
-    //'qunit',
     'clean',
-    'concat',
+    'copy',
     'uglify'
   ]);
   grunt.registerTask('server', function () {

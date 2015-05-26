@@ -55,7 +55,6 @@
             var counts = {};
             jQuery.getJSON('https://count.donreach.com/?url=' + encodeURIComponent(opts.url) + '&callback=?',
               function (data) {
-                console.log(data);
                 counts.url = data.url;
                 counts.facebook = data.shares.facebook;
                 counts.twitter = data.shares.twitter;
