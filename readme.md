@@ -59,6 +59,7 @@ property|default value|Description
 url|current page url|The url that will be shared
 description|current page meta tag description|Can be set to be shared as description on twitter
 title|current page title|Title that will be shared
+counts|true|set to false to bypass http request to get the counts
 twitter|true|set to false to disable 
 pinterest|true|set to false to disable
 facebook|true|set to false to disable
