@@ -68,7 +68,7 @@ gPlus|true|set to false to disable
 image|null|url of the image that will be shared with the links
 toWord|true|to convert count numbers into words eg: 12000 to 12K
 twitterVia|null|string containing the via value for twitter sharing eg: 'ritz078'.Mandatory if twitter is set to true
-twitterHashTags|null|comma separated values to be shared as hashtags in a single string.Mandatory if twitter is set to true.
+twitterHashTags|current page meta tag keywords|comma separated values to be shared as hashtags in a single string.Mandatory if twitter is set to true.
 
 ##How to use ?
 You can use these 2 classes to make a class clickable(open share dialogue) and show the share counts.
