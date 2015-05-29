@@ -21,7 +21,7 @@
       image          : null,
       toWord         : true,
       twitterVia     : null,
-      twitterHashTags: null
+      twitterHashTags: $('meta[name=keywords]').attr("content")
     };
 
     var that = this;
