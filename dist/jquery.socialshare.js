@@ -21,7 +21,7 @@
       image          : null,
       toWord         : true,
       twitterVia     : null,
-      twitterHashTags: null
+      twitterHashTags: $('meta[name=keywords]').attr("content")
     };
 
     var that = this;
@@ -46,33 +46,6 @@
     return this.each(function () {
 
       var process = {
-
-        all: {
-          /**
-           * The main API to get the counts of all the Social Sites
-           */
-          getCount: function (opts) {
-            var deferred = jQuery.Deferred();
-            var counts = {};
-            jQuery.getJSON('https://count.donreach.com/?url=' + encodeURIComponent(opts.url) + '&callback=?',
-              function (data) {
-                counts.url = data.url;
-                counts.facebook = data.shares.facebook;
-                counts.twitter = data.shares.twitter;
-                counts.linkedIn = data.shares.linkedin;
-                counts.pinterest = data.shares.pinterest;
-                counts.gPlus = data.shares.google;
-                counts.success = true;
-                deferred.resolve(counts);
-              })
-              .fail(function (jqxhr, textStatus, error) {
-                alert(error);
-                counts.success = false;
-                deferred.resolve(counts);
-              });
-            return deferred.promise();
-          }
-        },
 
         twitter: {
 
@@ -169,7 +142,7 @@
             var deferred = jQuery.Deferred();
             jQuery.getJSON('http://anyorigin.com/get?callback=?&url=' + encodeURIComponent('https://plusone.google.com/_/+1/fastbutton?url=' + opts.url),
               function (data) {
-                counts.gPlus = parseFloat(data.contents.match(/\{c: [0-9A-Z.]+/)[0].split(' ')[1]);
+                counts.gPlus = data.contents.match(/\{c: [0-9A-Z.]+/)?parseFloat(data.contents.match(/\{c: [0-9A-Z.]+/)[0].split(' ')[1]):0;
                 deferred.resolve(counts);
               });
             return deferred.promise();
@@ -250,21 +223,14 @@
       }
 
       if (options.counts) {
-        process.all.getCount(options).then(function (d) {
-          counts = d;
 
-          if (!d.success) {
             $.when(
               (options.facebook ? process.facebook.getCount(options, counts) : null), (options.twitter ? process.twitter.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
             )
               .then(function () {
                 render(counts);
               });
-          } else {
-            render(counts);
-          }
 
-        });
       }
       else {
         render();
