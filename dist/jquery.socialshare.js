@@ -246,7 +246,7 @@
       function openDialog(url, service) {
         window.open(
           url,
-          service + '-share-dialogue',
+          service + 'ShareDialogue',
           'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + winPosition.width + ',height=' + winPosition.height + ',top=' + winPosition.top + ',left=' + winPosition.left + ''
         );
         return false;
