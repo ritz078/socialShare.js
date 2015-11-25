@@ -140,9 +140,9 @@
 
           getCount: function (opts, counts) {
             var deferred = jQuery.Deferred();
-            jQuery.getJSON('http://anyorigin.com/get?callback=?&url=' + encodeURIComponent('https://plusone.google.com/_/+1/fastbutton?url=' + opts.url),
+            jQuery.getJSON('https://count.donreach.com/?url=' + opts.url,
               function (data) {
-                counts.gPlus = data.contents.match(/\{c: [0-9A-Z.]+/)?parseFloat(data.contents.match(/\{c: [0-9A-Z.]+/)[0].split(' ')[1]):0;
+                counts.gPlus = data.shares.google;
                 deferred.resolve(counts);
               });
             return deferred.promise();
