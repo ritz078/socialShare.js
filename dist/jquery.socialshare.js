@@ -13,15 +13,12 @@
       description    : $('meta[name=description]').attr("content"),
       title          : $('title').text(),
       counts         : true,
-      twitter        : true,
       facebook       : true,
       pinterest      : true,
       linkedIn       : true,
       gPlus          : true,
       image          : null,
-      toWord         : true,
-      twitterVia     : null,
-      twitterHashTags: $('meta[name=keywords]').attr("content")
+      toWord         : true
     };
 
     var that = this;
@@ -147,19 +144,6 @@
           });
 
         }
-        if (options.twitter) {
-          if (options.counts) {
-            that.find('.twitter-count').each(function () {
-              $(this).html(toWord(c.twitter));
-            });
-          }
-          that.find('.twitter-share').each(function () {
-            var url = 'https://twitter.com/share?url=' + options.url + '&text=' + options.description + '&via=' + options.twitterVia + '&hashtags=' + options.twitterHashTags + '';
-            $(this).click(function () {
-              openDialog(url, 'twitter');
-            });
-          });
-        }
         if (options.pinterest) {
           if (options.counts) {
             that.find('.pinterest-count').each(function () {
@@ -186,12 +170,25 @@
             });
           });
         }
+        if (options.gPlus) {
+          if (options.counts) {
+            that.find('.gplus-count').each(function () {
+              $(this).html(toWord(c.gPlus));
+            });
+          }
+          that.find('.gplus-share').each(function () {
+            var url = 'https://plus.google.com/share?url=' + options.url;
+            $(this).click(function () {
+              openDialog(url, 'gplus');
+            });
+          });
+        }
       }
 
       if (options.counts) {
 
             $.when(
-              (options.facebook ? process.facebook.getCount(options, counts) : null), (options.twitter ? process.twitter.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null)
+              (options.facebook ? process.facebook.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
             )
               .then(function () {
                 render(counts);
