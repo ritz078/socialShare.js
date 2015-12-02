@@ -13,6 +13,7 @@
       description    : $('meta[name=description]').attr("content"),
       title          : $('title').text(),
       counts         : true,
+      twitter        : true,
       facebook       : true,
       pinterest      : true,
       linkedIn       : true,
@@ -43,27 +44,6 @@
     return this.each(function () {
 
       var process = {
-
-        twitter: {
-
-          /**
-           * Get The count of twitter shares.
-           * Used only when the main API has some issues.
-           * @param opts
-           * @returns {*} promise when the data is resolved
-           */
-
-          getCount: function (opts, counts) {
-            var deferred = jQuery.Deferred();
-            jQuery.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + opts.url + '&callback=?',
-              function (data) {
-                counts.twitter = data.count;
-                deferred.resolve(counts);
-              });
-            return deferred.promise();
-          }
-
-        },
 
         facebook: {
 
@@ -123,6 +103,27 @@
               });
             return deferred.promise();
           }
+        },
+
+        gPlus: {
+
+          /**
+           * Get The count of G+ shares.
+           * Used only when the main API has some issues.
+           * This is a workaround as default api doesn't work without Authentication key.
+           * @param opts
+           * @returns {*} promise when the data is resolved
+           */
+
+          getCount: function (opts, counts) {
+            var deferred = jQuery.Deferred();
+            jQuery.getJSON('https://count.donreach.com/?url=' + opts.url,
+              function (data) {
+                counts.gPlus = data.shares.google;
+                deferred.resolve(counts);
+              });
+            return deferred.promise();
+          }
         }
       };
 
@@ -143,6 +144,19 @@
             });
           });
 
+        }
+        if (options.twitter) {
+          if (options.counts) {
+            that.find('.twitter-count').each(function () {
+              $(this).html(toWord(c.twitter));
+            });
+          }
+          that.find('.twitter-share').each(function () {
+            var url = 'https://twitter.com/share?url=' + options.url + '&text=' + options.description + '&via=' + options.twitterVia + '&hashtags=' + options.twitterHashTags + '';
+            $(this).click(function () {
+              openDialog(url, 'twitter');
+            });
+          });
         }
         if (options.pinterest) {
           if (options.counts) {
@@ -188,7 +202,7 @@
       if (options.counts) {
 
             $.when(
-              (options.facebook ? process.facebook.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
+              (options.facebook ? process.facebook.getCount(options, counts) : null),(options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
             )
               .then(function () {
                 render(counts);
