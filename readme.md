@@ -60,11 +60,10 @@ url|current page url|The url that will be shared
 description|current page meta tag description|Can be set to be shared as description on twitter
 title|current page title|Title that will be shared
 counts|true|set to false to bypass http request to get the counts
-twitter|true|set to false to disable 
+twitter|true|set to false to disable
 pinterest|true|set to false to disable
 facebook|true|set to false to disable
 linkedin|true|set to false to disable
-gPlus|true|set to false to disable
 image|null|url of the image that will be shared with the links
 toWord|true|to convert count numbers into words eg: 12000 to 12K
 twitterVia|null|string containing the via value for twitter sharing eg: 'ritz078'.Mandatory if twitter is set to true
@@ -72,7 +71,7 @@ twitterHashTags|current page meta tag keywords|comma separated values to be shar
 
 ##How to use ?
 You can use these 2 classes to make a class clickable(open share dialogue) and show the share counts.
-* **[service]-share** and 
+* **[service]-share** and
 * **[service]-count**
 
 where **[service] = twitter/facebook/pinterest/linkedin/gPlus**
@@ -92,7 +91,7 @@ Class|Description|example
 
 ```html
 <div class="element">
-<!--===== this block will become clickable (shows the twitter share dialogue on click) 
+<!--===== this block will become clickable (shows the twitter share dialogue on click)
 because of the class 'twitter-share'====-->
 	<div class="twitter-share">
 		<span>Share on twitter</span>
@@ -100,7 +99,7 @@ because of the class 'twitter-share'====-->
 	</div>
 	<!--=======================================-->
 
-	<!--===== this block will become clickable (shows the facebook share dialogue on click) 
+	<!--===== this block will become clickable (shows the facebook share dialogue on click)
 because of the class 'facebook-share'====-->
 	<div class="facebook-share">
 		<span>Share on Facebook</span>

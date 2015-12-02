@@ -126,27 +126,6 @@
               });
             return deferred.promise();
           }
-        },
-
-        gPlus: {
-
-          /**
-           * Get The count of G+ shares.
-           * Used only when the main API has some issues.
-           * This is a workaround as default api doesn't work without Authentication key.
-           * @param opts
-           * @returns {*} promise when the data is resolved
-           */
-
-          getCount: function (opts, counts) {
-            var deferred = jQuery.Deferred();
-            jQuery.getJSON('https://count.donreach.com/?url=' + opts.url,
-              function (data) {
-                counts.gPlus = data.shares.google;
-                deferred.resolve(counts);
-              });
-            return deferred.promise();
-          }
         }
       };
 
@@ -207,25 +186,12 @@
             });
           });
         }
-        if (options.gPlus) {
-          if (options.counts) {
-            that.find('.gplus-count').each(function () {
-              $(this).html(toWord(c.gPlus));
-            });
-          }
-          that.find('.gplus-share').each(function () {
-            var url = 'https://plus.google.com/share?url=' + options.url;
-            $(this).click(function () {
-              openDialog(url, 'gplus');
-            });
-          });
-        }
       }
 
       if (options.counts) {
 
             $.when(
-              (options.facebook ? process.facebook.getCount(options, counts) : null), (options.twitter ? process.twitter.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null), (options.gPlus ? process.gPlus.getCount(options, counts) : null)
+              (options.facebook ? process.facebook.getCount(options, counts) : null), (options.twitter ? process.twitter.getCount(options, counts) : null), (options.pinterest ? process.pinterest.getCount(options, counts) : null), (options.linkedIn ? process.linkedIn.getCount(options, counts) : null)
             )
               .then(function () {
                 render(counts);
